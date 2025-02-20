@@ -1,6 +1,7 @@
 package es.torredelrey.t5_p2.vista;
 
 import es.torredelrey.t5_p2.controlador.ClientesJpaController;
+import es.torredelrey.t5_p2.controlador.EmpleadosJpaController;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
@@ -12,6 +13,7 @@ public class Pedidos extends javax.swing.JFrame {
 
     EntityManagerFactory emf=Persistence.createEntityManagerFactory("persistence");
     ClientesJpaController controladorClientes =new ClientesJpaController(emf);
+    EmpleadosJpaController empleadoControlador = new EmpleadosJpaController(emf);
     
     public Pedidos() {
         initComponents();
@@ -23,6 +25,7 @@ public class Pedidos extends javax.swing.JFrame {
 
         lblTitulo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        btnPedidos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,6 +41,13 @@ public class Pedidos extends javax.swing.JFrame {
             }
         });
 
+        btnPedidos.setText("Pedidos");
+        btnPedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPedidosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -47,7 +57,9 @@ public class Pedidos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(btnPedidos))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -58,7 +70,9 @@ public class Pedidos extends javax.swing.JFrame {
                 .addComponent(lblTitulo)
                 .addGap(26, 26, 26)
                 .addComponent(jButton1)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnPedidos)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         pack();
@@ -68,6 +82,11 @@ public class Pedidos extends javax.swing.JFrame {
         // TODO add your handling code here:
         GenerarClientes.GenerarPDF(controladorClientes.findClientesEntities());
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedidosActionPerformed
+        // TODO add your handling code here:
+        GeneraPedidos.GenerarPDF(empleadoControlador.findEmpleadosEntities());
+    }//GEN-LAST:event_btnPedidosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -105,6 +124,7 @@ public class Pedidos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnPedidos;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblTitulo;
     // End of variables declaration//GEN-END:variables
