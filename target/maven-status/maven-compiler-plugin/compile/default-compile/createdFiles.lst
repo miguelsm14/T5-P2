@@ -3,7 +3,6 @@ es\torredelrey\t5_p2\modelo\Ordenes.class
 es\torredelrey\t5_p2\modelo\Clientes.class
 es\torredelrey\t5_p2\modelo\DetalleOrdenesPK.class
 es\torredelrey\t5_p2\controlador\DetalleOrdenesJpaController.class
-es\torredelrey\t5_p2\modelo\EmpleadoJefe.class
 es\torredelrey\t5_p2\modelo\Productos.class
 es\torredelrey\t5_p2\vista\GenerarEmpleados.class
 es\torredelrey\t5_p2\modelo\Empleados.class
