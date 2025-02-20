@@ -26,6 +26,8 @@ public class Pedidos extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btnPedidos = new javax.swing.JButton();
+        btnProductos = new javax.swing.JButton();
+        btnEmpleados = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,6 +50,15 @@ public class Pedidos extends javax.swing.JFrame {
             }
         });
 
+        btnProductos.setText("Productos");
+        btnProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProductosActionPerformed(evt);
+            }
+        });
+
+        btnEmpleados.setText("Empleados");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -59,7 +70,9 @@ public class Pedidos extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
-                            .addComponent(btnPedidos))
+                            .addComponent(btnPedidos)
+                            .addComponent(btnProductos)
+                            .addComponent(btnEmpleados))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -72,7 +85,11 @@ public class Pedidos extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(btnPedidos)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnProductos)
+                .addGap(18, 18, 18)
+                .addComponent(btnEmpleados)
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pack();
@@ -87,6 +104,10 @@ public class Pedidos extends javax.swing.JFrame {
         // TODO add your handling code here:
         GeneraPedidos.GenerarPDF(empleadoControlador.findEmpleadosEntities());
     }//GEN-LAST:event_btnPedidosActionPerformed
+
+    private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProductosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,7 +145,9 @@ public class Pedidos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEmpleados;
     private javax.swing.JButton btnPedidos;
+    private javax.swing.JButton btnProductos;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblTitulo;
     // End of variables declaration//GEN-END:variables
