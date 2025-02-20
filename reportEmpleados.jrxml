@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportEmpleados" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="12e73472-d943-4125-9747-a69d899af456">
+	<property name="ireport.zoom" value="1.9487171000000019"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<parameter name="fechaInforme" class="java.util.Date"/>
+	<parameter name="imagen1" class="java.io.InputStream"/>
+	<field name="empleadoid" class="java.lang.Integer"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="apellido" class="java.lang.String"/>
+	<field name="fechaNac" class="java.util.Date"/>
+	<field name="reportaA.nombre" class="java.lang.String"/>
+	<group name="subordinados">
+		<groupExpression><![CDATA[$F{reportaA.nombre}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Opaque" x="197" y="22" width="199" height="54" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="e1ac847d-100f-4f27-9f9c-bf72ee269bd5"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="187" y="12" width="199" height="54" backcolor="#CCFFFF" uuid="bf5c0b90-7c6f-4341-b44a-709d72c509e5"/>
+			</rectangle>
+			<textField>
+				<reportElement x="187" y="12" width="199" height="54" uuid="6906c23e-2f7a-4cc1-8283-622f845ac482"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="5" y="0" width="78" height="79" uuid="5244b66b-d4a1-4be8-aff1-ab0376967ec7"/>
+				<imageExpression><![CDATA["C:\\Users\\racga\\Documents\\GitHub\\T5-P2\\src\\main\\resources\\imagen\\pedido.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="465" y="0" width="90" height="20" uuid="3f5fd969-698f-40ee-b5a4-09c299523f5f"/>
+				<textFieldExpression><![CDATA[$P{fechaInforme}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="361" y="0" width="100" height="20" uuid="1be0c413-e20e-41f0-b979-0ed4a064344e"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Fecha Informe:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="555" height="29" backcolor="#99FFCC" uuid="975a36d7-9bf4-487d-b01e-89c02ebe1506"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="155" y="5" width="100" height="20" uuid="839f2148-2bbf-4c37-9b64-a7c7e4c6b2fe"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Id Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="5" width="100" height="20" uuid="deb991a3-e29e-4207-8f5c-eb8aaf75e759"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="5" width="100" height="20" uuid="ea1784d5-4a1f-43bb-ae92-ee5a85ffb466"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="5" width="100" height="20" uuid="eae34857-b294-4de8-9324-00295b39958d"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de nacimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="5" width="100" height="20" uuid="a5a190ed-7c58-4287-ba9f-cdd79522be54"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Jefe]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="555" height="24" backcolor="#CCCCFF" uuid="170a142e-9608-49e5-819c-84bd98e816dc">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="155" y="4" width="100" height="20" uuid="095b01ce-b9be-4215-ad3e-7f0c5d14a477"/>
+				<textFieldExpression><![CDATA[$F{empleadoid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="4" width="100" height="20" uuid="691b353e-2c64-428e-82d9-e0f1a013b5d9"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="4" width="100" height="20" uuid="caba7e4b-ccf4-499f-bcac-5bf0d55f11fc"/>
+				<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="4" width="100" height="20" uuid="34f27d7b-d4cd-4c25-ac9d-5f7272d5e5c1"/>
+				<textFieldExpression><![CDATA[$F{fechaNac}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Group" evaluationGroup="subordinados">
+				<reportElement x="15" y="4" width="100" height="20" uuid="47e13f05-9e60-42b3-bc18-3e42a8ae5a61"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reportaA.nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="21">
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="c1805d06-cad9-41d1-af7c-ba0c487d0d4d"/>
+				<textElement textAlignment="Right">
+					<font isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="87" y="1" width="100" height="20" uuid="233c9954-3dd7-4111-b3d9-5a6918f34e64"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="cb5f2018-0bcf-49b7-b1e0-35a77979c9a9"/>
+				<text><![CDATA[Empleados totales:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -60,6 +60,11 @@ public class Pedidos extends javax.swing.JFrame {
         });
 
         btnEmpleados.setText("Empleados");
+        btnEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpleadosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,6 +116,10 @@ public class Pedidos extends javax.swing.JFrame {
         // TODO add your handling code here:
         GeneradorProductos.leerInforme(pja.findProductosEntities());
     }//GEN-LAST:event_btnProductosActionPerformed
+
+    private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
+        GenerarEmpleados.GenerarPDF(empleadoControlador.findEmpleadosEntities());
+    }//GEN-LAST:event_btnEmpleadosActionPerformed
 
     /**
      * @param args the command line arguments
