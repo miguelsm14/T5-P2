@@ -20,15 +20,14 @@ public class GenerarClientes {
         Date date=new Date();
         try {
             JasperPrint print;
-            InputStream imagen1;
-            InputStream imagen2;
-            //imagen1=GeneradorPdf.class.getResourceAsStream("/logoGrupo1.png");
-            //imagen2=GeneradorPdf.class.getResourceAsStream("/logoGrupoPapelria.png");
+            InputStream imagen;
+            imagen=GenerarClientes.class.getResourceAsStream("/imagen/images.jpeg");
+           
             HashMap param=new HashMap();
-//            param.put("titulo", "Informe de papelería");
-//            param.put("fecha", date);
-            //param.put("imagen1", imagen1);
-            //param.put("imagen2", imagen2);
+            param.put("titulo", "DATOS DE LOS CLIENTES");
+            param.put("FECHA", date);
+            param.put("imagen", imagen);
+            
             
             JRDataSource datasource=new JRBeanArrayDataSource(lista.toArray());
             String report="T5_P2_ireportClientes.jasper";

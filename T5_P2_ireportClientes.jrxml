@@ -3,6 +3,9 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<parameter name="imagen" class="java.io.InputStream"/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<parameter name="FECHA" class="java.util.Date"/>
 	<queryString>
 		<![CDATA[SELECT * FROM Clientes;]]>
 	</queryString>
@@ -19,20 +22,36 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="110" splitType="Stretch">
+		<band height="137" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="35" y="110" width="100" height="23" backcolor="#FFCC99" uuid="6bb92ff7-61ce-4e24-bf22-e617c73c8466"/>
+			</rectangle>
 			<rectangle radius="10">
 				<reportElement x="147" y="15" width="500" height="79" backcolor="#99CCFF" uuid="8c655a7b-6268-40ea-a748-81a12f82fd43"/>
 			</rectangle>
 			<image>
 				<reportElement x="0" y="15" width="125" height="79" uuid="222d62fb-ea2e-4e7a-810a-3002cf042bd0"/>
+				<imageExpression><![CDATA[$P{imagen}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="1" y="0" width="801" height="110" uuid="609c932a-e9c2-4c27-9617-e4b19beaddc2"/>
+				<reportElement x="92" y="0" width="622" height="110" uuid="609c932a-e9c2-4c27-9617-e4b19beaddc2"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="36"/>
 				</textElement>
-				<text><![CDATA[DATOS DE LOS CLIENTES:]]></text>
+				<text><![CDATA[]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="147" y="15" width="500" height="79" uuid="ece448d6-953d-4727-b317-75093e871d19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="36"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="35" y="110" width="100" height="20" uuid="9dc4e50a-775d-4689-89ea-14df941cf6ad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{FECHA}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<columnHeader>
@@ -154,6 +173,13 @@
 				<reportElement x="1" y="0" width="732" height="40" uuid="56390d9c-98c5-40e8-9906-5ed6787b3ebd"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="15" width="158" height="20" uuid="7989a571-9f9d-45e4-9168-bcfc412f6f15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TOTAL CLIENTES: " + $V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>

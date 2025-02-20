@@ -18,22 +18,22 @@
 	<group name="Agrupados_Empleado">
 		<groupExpression><![CDATA[$F{nombre}]]></groupExpression>
 		<groupHeader>
-			<band height="39">
+			<band height="51">
 				<rectangle radius="10">
-					<reportElement x="3" y="0" width="274" height="20" backcolor="#FFCCCC" uuid="438fa658-5a62-4e1f-8908-9b68dbb9d18b"/>
+					<reportElement x="3" y="19" width="274" height="20" backcolor="#FFCCCC" uuid="438fa658-5a62-4e1f-8908-9b68dbb9d18b"/>
 				</rectangle>
 				<textField>
-					<reportElement x="60" y="0" width="100" height="20" uuid="af945bbc-7a37-4493-9f15-e883687b7f8e"/>
+					<reportElement x="63" y="19" width="100" height="20" uuid="af945bbc-7a37-4493-9f15-e883687b7f8e"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="160" y="0" width="100" height="20" uuid="f3a831dd-dc34-4c6c-b7a7-17d9548012ea"/>
+					<reportElement x="163" y="19" width="100" height="20" uuid="f3a831dd-dc34-4c6c-b7a7-17d9548012ea"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="16" y="0" width="44" height="20" uuid="4d2a1d28-fb49-4afd-be66-05a749000dc8"/>
+					<reportElement x="19" y="19" width="44" height="20" uuid="4d2a1d28-fb49-4afd-be66-05a749000dc8"/>
 					<textElement verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$F{empleadoid}]]></textFieldExpression>
 				</textField>
@@ -80,7 +80,7 @@
 		<band height="20" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="100" splitType="Stretch">
+		<band height="107" splitType="Stretch">
 			<subreport>
 				<reportElement x="103" y="0" width="200" height="100" uuid="1e3f0053-9030-496a-bc2b-e6872e8ee67e"/>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanArrayDataSource($F{ordenesCollection}.toArray())]]></dataSourceExpression>
@@ -94,8 +94,8 @@
 				<reportElement x="3" y="14" width="157" height="20" backcolor="#CCFFCC" uuid="c2ffe075-8eaa-44d4-9b1b-aeac00916ebf"/>
 			</rectangle>
 			<textField>
-				<reportElement x="223" y="34" width="100" height="20" uuid="2275fb05-115a-46b4-b8b1-d7c0641b5312"/>
-				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER} + " de " + $V{REPORT_COUNT}]]></textFieldExpression>
+				<reportElement x="223" y="34" width="164" height="20" uuid="2275fb05-115a-46b4-b8b1-d7c0641b5312"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER} ]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="118" y="14" width="29" height="20" uuid="4fe52b2c-f8c8-4c9d-8e11-6516580e622a"/>

@@ -29,7 +29,6 @@ public class GeneraPedidos {
         try {
             JasperPrint print;
             InputStream imagen1;
-            InputStream imagen2;
             String titulo = "Pedidos";
             imagen1=GeneraPedidos.class.getResourceAsStream("/imagen/pedido.jpg");
             HashMap param=new HashMap();
