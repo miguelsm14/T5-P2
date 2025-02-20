@@ -6,7 +6,9 @@ es\torredelrey\t5_p2\controlador\DetalleOrdenesJpaController.class
 es\torredelrey\t5_p2\modelo\Productos.class
 es\torredelrey\t5_p2\modelo\Empleados.class
 es\torredelrey\t5_p2\controlador\ProveedoresJpaController.class
+es\torredelrey\t5_p2\vista\Pedidos$4.class
 es\torredelrey\t5_p2\controlador\exceptions\NonexistentEntityException.class
+es\torredelrey\t5_p2\vista\GeneradorProductos.class
 es\torredelrey\t5_p2\vista\Pedidos.class
 es\torredelrey\t5_p2\controlador\ClientesJpaController.class
 es\torredelrey\t5_p2\controlador\exceptions\IllegalOrphanException.class

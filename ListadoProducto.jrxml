@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListadoProducto" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="364872f3-02f6-4d93-ad8e-9dc700651061">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="torre" class="java.io.InputStream"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<field name="productoid" class="java.lang.Integer"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="preciounit" class="java.lang.Double"/>
+	<field name="existencia" class="java.lang.Integer"/>
+	<field name="categoriaid.nombrecat" class="java.lang.String"/>
+	<group name="Categoria">
+		<groupExpression><![CDATA[$F{categoriaid.nombrecat}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="139" y="21" width="291" height="49" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="b974a090-ae78-45b9-b833-c28b6757f565"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="130" y="11" width="295" height="51" backcolor="#9999FF" uuid="0fd4ba8b-1ac0-40e3-ab3e-41a54253764c"/>
+			</rectangle>
+			<image>
+				<reportElement x="443" y="0" width="112" height="79" uuid="6dd6f93a-92e7-466c-ab61-81bedca98ff2"/>
+				<imageExpression><![CDATA[$P{torre}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="139" y="17" width="279" height="43" uuid="79b99cf7-180a-4fc2-b59d-47bb0e47b3e5"/>
+				<textElement>
+					<font fontName="Impact" size="32"/>
+				</textElement>
+				<text><![CDATA[Listado de productos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="112" height="79" uuid="2631a27c-d28d-4858-a009-8f584d775891"/>
+				<imageExpression><![CDATA[$P{torre}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="237" y="10" width="100" height="20" uuid="b38428b6-3f3e-4bc9-a90f-7b8e83678fca"/>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="528" height="26" backcolor="#FF9999" uuid="fa8dc69b-e52a-40aa-892f-b7f9df6bc88e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="12" y="4" width="100" height="20" uuid="897a6b96-e10b-47d5-b1cb-a9af0b1067fe"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Productoid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="4" width="100" height="20" uuid="74e476e7-0efa-4bdf-8030-458a95ba42e3"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="4" width="100" height="20" uuid="90db9963-5770-499f-836d-42754023c19e"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Preciounit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="4" width="100" height="20" uuid="502cfd31-dbdf-4e80-afd5-1b2860efa52e"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Existencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="4" width="100" height="20" uuid="a2296661-c15c-4a3e-8cda-50e17f8d3bb4"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Categoria]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="5" width="528" height="26" backcolor="#FFFFCC" uuid="c0d17f99-aabc-4f82-afb0-e5b2d372e136">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="12" y="11" width="100" height="20" uuid="a005202d-4bf5-44a8-9744-1e2cf2701bed"/>
+				<textFieldExpression><![CDATA[$F{productoid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="11" width="100" height="20" uuid="b8ef7828-ee73-452a-a7b3-d3e564d3d431"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="212" y="11" width="100" height="20" uuid="08f21fef-b4f8-4bb6-97fd-550434900e8b"/>
+				<textFieldExpression><![CDATA[$F{preciounit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="11" width="100" height="20" uuid="4ae4a931-bf15-4a7b-9b57-c2cc54570f52"/>
+				<textFieldExpression><![CDATA[$F{existencia}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Group" evaluationGroup="Categoria">
+				<reportElement x="412" y="11" width="100" height="20" uuid="2e94540c-1cb4-4098-bb5d-4d5b626cb893"/>
+				<textFieldExpression><![CDATA[$F{categoriaid.nombrecat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="153" splitType="Stretch">
+			<textField>
+				<reportElement x="454" y="2" width="100" height="20" uuid="9bb52290-eaa1-4cb6-8407-2d9dfe4ec86d"/>
+				<textElement>
+					<font fontName="Arial Black" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="321" y="2" width="132" height="20" uuid="7ba169da-a043-4c14-8eaf-449e10d1fe5c"/>
+				<textElement>
+					<font fontName="Arial Black" size="12"/>
+				</textElement>
+				<text><![CDATA[Total de productos:]]></text>
+			</staticText>
+			<stackedBar3DChart>
+				<chart>
+					<reportElement x="1" y="22" width="554" height="131" uuid="ac4455dc-3e83-426c-8a3b-7c5012229876"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{categoriaid.nombrecat}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{categoriaid.nombrecat}]]></categoryExpression>
+						<valueExpression><![CDATA[$V{Categoria_COUNT}]]></valueExpression>
+						<labelExpression><![CDATA[$F{categoriaid.nombrecat}]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</stackedBar3DChart>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="221" y="36" width="100" height="20" uuid="2a0e8a3e-46a6-412f-bd62-dfb1386dd2a4"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pág " +$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

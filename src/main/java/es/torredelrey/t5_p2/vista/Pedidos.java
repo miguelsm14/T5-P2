@@ -2,6 +2,7 @@ package es.torredelrey.t5_p2.vista;
 
 import es.torredelrey.t5_p2.controlador.ClientesJpaController;
 import es.torredelrey.t5_p2.controlador.EmpleadosJpaController;
+import es.torredelrey.t5_p2.controlador.ProductosJpaController;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
@@ -14,6 +15,7 @@ public class Pedidos extends javax.swing.JFrame {
     EntityManagerFactory emf=Persistence.createEntityManagerFactory("persistence");
     ClientesJpaController controladorClientes =new ClientesJpaController(emf);
     EmpleadosJpaController empleadoControlador = new EmpleadosJpaController(emf);
+    ProductosJpaController pja = new ProductosJpaController(emf);
     
     public Pedidos() {
         initComponents();
@@ -107,6 +109,7 @@ public class Pedidos extends javax.swing.JFrame {
 
     private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
         // TODO add your handling code here:
+        GeneradorProductos.leerInforme(pja.findProductosEntities());
     }//GEN-LAST:event_btnProductosActionPerformed
 
     /**
