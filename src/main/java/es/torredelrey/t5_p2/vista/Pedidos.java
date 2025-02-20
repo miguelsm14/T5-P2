@@ -119,6 +119,7 @@ public class Pedidos extends javax.swing.JFrame {
 
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
         GenerarEmpleados.GenerarPDF(empleadoControlador.findEmpleadosEntities());
+        //wawi
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
     /**
