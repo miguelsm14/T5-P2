@@ -20,6 +20,9 @@
 	</background>
 	<title>
 		<band height="110" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="147" y="15" width="500" height="79" backcolor="#99CCFF" uuid="8c655a7b-6268-40ea-a748-81a12f82fd43"/>
+			</rectangle>
 			<image>
 				<reportElement x="0" y="15" width="125" height="79" uuid="222d62fb-ea2e-4e7a-810a-3002cf042bd0"/>
 			</image>
@@ -32,9 +35,6 @@
 			</staticText>
 		</band>
 	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
@@ -148,9 +148,6 @@
 			</textField>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
 		<band height="40" splitType="Stretch">
 			<textField>
@@ -160,7 +157,4 @@
 			</textField>
 		</band>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>
